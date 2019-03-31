@@ -19,8 +19,9 @@ print("""<!DOCTYPE HTML>
             <style>
             h1 {
                 font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
-                font-size: 250%;
-               } 
+                font-size: 48pt;
+                color: DarkRed;
+                } 
             p {
                 font-family: Verdana, Arial, Helvetica, sans-serif; 
                 font-size: 16pt;
@@ -28,9 +29,10 @@ print("""<!DOCTYPE HTML>
            </style>
         </head>
         <body bgcolor="BurlyWood">
-        <center>""")
+        <center>
+        <h1>----------------TextEngine by ev1n----------------</h1>""")
 
-print("<h1>Обработка введённого текста!</h1>")
+
 d = {"й": "j", "ц": "c", "у": "u", "к": "k", "е": "e", "н": "n",
              "г": "g", "ш": "sh", "щ": "shh", "з": "z", "х": "h", "ъ": "#",
              "ф": "f", "ы": "y", "в": "v", "а": "a", "п": "p", "р": "r",
@@ -56,9 +58,8 @@ translit = ''.join(translit)
 
 if text == text.upper():
     translit = translit.upper()
-    
-print("<p>Ввод: {}</p>".format(text1))
-print("<p>Результат: {}</p>".format(translit))
+
+print("<p>Транслитерация введённого текста: {}</p>".format(translit))
 
 print("""</center>
          </body>
