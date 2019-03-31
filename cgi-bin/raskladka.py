@@ -15,11 +15,12 @@ print("""<!DOCTYPE HTML>
         <html>
         <head>
             <meta charset="utf-8">
-            <title>Обработка данных форм</title>
+            <title>Раскладка</title>
             <style>
             h1 {
                 font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
-                font-size: 250%;
+                font-size: 48pt;
+                color: DarkRed;
                } 
             p {
                 font-family: Verdana, Arial, Helvetica, sans-serif; 
@@ -27,9 +28,10 @@ print("""<!DOCTYPE HTML>
                }
            </style>
         </head>
-        <body bgcolor="BurlyWood">""")
+        <body bgcolor="BurlyWood">
+        <center>
+        <h1>----------------TextEngine by ev1n----------------</h1>""")
 
-print("<h1>Обработка данных форм!</h1>")
 text = text1
 d = {"q": "й", "w": "ц", "e": "у", "r": "к", "t": "е", "y": "н",
      "u": "г", "i": "ш", "o": "щ", "p": "з", "[": "х", "]": "ъ",
@@ -43,6 +45,7 @@ d = {"q": "й", "w": "ц", "e": "у", "r": "к", "t": "е", "y": "н",
      "J": "О", "K": "Л", "L": "Д", ":": "Ж", '"': 'Э', "Z": "Я",
      "X": "Ч", "C": "С", "V": "М", "B": "И", "N": "Т",
      "<": "Б", ">": "Ю", "~": "Ё", 'M': 'Ь', '/': '.', '?': ','}
+
 data = []
 for symbol in text:
     if symbol in d:
@@ -51,7 +54,7 @@ for symbol in text:
         data.append(symbol)
 data = ''.join(data)
 
-print("<p>Результат: {}</p>".format(data))
+print("<p>Введённый текст с изменённой раскладкой: {}</p>".format(data))
 
 print("""</body>
         </html>""")
