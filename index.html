@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -13,7 +13,7 @@
 </head>
 <body bgcolor="BurlyWood">
 <center>
-    <h1>-------------------------------TextEngine by ev1n-------------------------------</h1>
+    <h1>----------------TextEngine by ev1n----------------</h1>
     <form action="/cgi-bin/translit.py">
         <input type="text" name="TEXT_1" style="width: 700px; height: 60px; font-size: 18pt;">
         <input type="submit" value="  Транслит  " style="width: 200px; height: 71px; font-size: 18pt; color: DarkRed;">
@@ -26,19 +26,40 @@
     </form>
     <form action="/cgi-bin/translate.py">
         <input type="text" name="TEXT_1" style="width: 700px; height: 60px; font-size: 18pt;">
-    <select name="LANGUAGE1" size="3">
-	<option>Русский</option>
+    <select name="LANGUAGE1" size="3" style="position: absolute; bottom: 500px; right: 565px;">
+	<option>Язык исходного текста</option>
+        <option>Русский</option>
 	<option>Английский</option>
 	<option>Испанский</option>
 	<option>Немецкий</option>
+	<option>Итальянский</option>
+	<option>Французский</option>
+	<option>Нидерландский</option>
+	<option>Украинский</option>
+	<option>Словенский</option>
+	<option>Норвежский</option>
+	<option>Литовский</option>
+	<option>Латинский</option>
+	<option>Белорусский</option>
     </select>
-    <select name="LANGUAGE2" size="3">
+    <select name="LANGUAGE2" size="3" style="position: absolute; bottom: 500px; right: 446px;">
+	<option>Язык перевода</option>
 	<option>Русский</option>
 	<option>Английский</option>
 	<option>Испанский</option>
 	<option>Немецкий</option>
+	<option>Итальянский</option>
+	<option>Французский</option>
+	<option>Нидерландский</option>
+	<option>Украинский</option>
+	<option>Словенский</option>
+	<option>Норвежский</option>
+	<option>Литовский</option>
+	<option>Латинский</option>
+	<option>Белорусский</option>
     </select>
     <input type="submit" value=" Перевод " style="width: 200px; height: 71px; font-size: 18pt; color: DarkRed;">
+    <input type="reset" value="Очистить">
     </form>
 </center>
 </body>
