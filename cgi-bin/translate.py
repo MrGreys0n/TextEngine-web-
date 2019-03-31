@@ -18,8 +18,10 @@ KEY = a + b
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 form = cgi.FieldStorage()
-text = form.getfirst("TEXT_1", "не задано")
-text = html.escape(text1)
+text = form.getfirst("TEXT_1")
+text = html.escape(text)
+LANGUAGE1 = form.getfirst("LANGUAGE1")
+LANGUAGE2 = form.getfirst("LANGUAGE2")
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
@@ -41,11 +43,11 @@ print("""<!DOCTYPE HTML>
         <body bgcolor="BurlyWood">""")
 
 print("<h1>Обработка данных форм!</h1>")
-LANGUAGE1 = DICT_WITH_LANGS[text]
-LANGUAGE2 = DICT_WITH_LANGS[text]
+LANGUAGE1 = DICT_WITH_LANGS[LANGUAGE1]
+LANGUAGE2 = DICT_WITH_LANGS[LANGUAGE2]
 lang = LANGUAGE1 + '-' + LANGUAGE2
 r = requests.post(URL, data={'key': KEY, 'text': text, 'lang': lang})
-data = r.find('['):-1][2:-2])
+data = r.text[r.text.find('['):-1][2:-2]
 
 print("<p>Результат: {}</p>".format(data))
 
