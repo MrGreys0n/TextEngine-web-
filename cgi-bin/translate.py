@@ -18,10 +18,23 @@ KEY = a + b
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
 form = cgi.FieldStorage()
-text = form.getfirst("TEXT_1")
+text = form.getfirst("TEXT_1", "не задано")
 text = html.escape(text)
 LANGUAGE1 = form.getfirst("LANGUAGE1")
 LANGUAGE2 = form.getfirst("LANGUAGE2")
+err = 0
+if LANGUAGE1 == None:
+    LANGUAGE1 = 'Русский'
+    err = 1
+if LANGUAGE2 == None:
+    LANGUAGE2 = 'Русский'
+    err = 1
+if LANGUAGE1 == 'Язык исходного текста':
+    LANGUAGE1 = 'Русский'
+    err = 1
+if LANGUAGE2 == 'Язык перевода':
+    LANGUAGE2 = 'Русский'
+    err = 1
 
 print("Content-type: text/html\n")
 print("""<!DOCTYPE HTML>
@@ -32,24 +45,28 @@ print("""<!DOCTYPE HTML>
             <style>
             h1 {
                 font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
-                font-size: 250%;
-               } 
+                font-size: 48pt;
+                color: DarkRed;
+                } 
             p {
                 font-family: Verdana, Arial, Helvetica, sans-serif; 
                 font-size: 16pt;
                }
            </style>
         </head>
-        <body bgcolor="BurlyWood">""")
+        <body bgcolor="BurlyWood">
+        <center>
+        <h1>----------------TextEngine by ev1n----------------</h1>""")
 
-print("<h1>Обработка данных форм!</h1>")
 LANGUAGE1 = DICT_WITH_LANGS[LANGUAGE1]
 LANGUAGE2 = DICT_WITH_LANGS[LANGUAGE2]
 lang = LANGUAGE1 + '-' + LANGUAGE2
-r = requests.post(URL, data={'key': KEY, 'text': text, 'lang': lang})
-data = r.text[r.text.find('['):-1][2:-2]
-
-print("<p>Результат: {}</p>".format(data))
+if err == 0:
+    r = requests.post(URL, data={'key': KEY, 'text': text, 'lang': lang})
+    data = r.text[r.text.find('['):-1][2:-2]
+    print("<p>Перевод введённого текста: {}</p>".format(data))
+else:
+    print("<p>Не выбран язык</p>")
 
 print("""</body>
         </html>""")
