@@ -18,12 +18,12 @@ print("""<!DOCTYPE HTML>
             <title>Транслит</title>
             <style>
             h1 {
-                font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+                font-family: 'Times New Roman', Times, serif;
                 font-size: 48pt;
                 color: DarkRed;
-                } 
+                }
             p {
-                font-family: Verdana, Arial, Helvetica, sans-serif; 
+                font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: 16pt;
                }
            </style>
@@ -34,17 +34,17 @@ print("""<!DOCTYPE HTML>
 
 
 d = {"й": "j", "ц": "c", "у": "u", "к": "k", "е": "e", "н": "n",
-             "г": "g", "ш": "sh", "щ": "shh", "з": "z", "х": "h", "ъ": "#",
-             "ф": "f", "ы": "y", "в": "v", "а": "a", "п": "p", "р": "r",
-             "о": "o", "л": "l", "д": "d", "ж": "zh", "э": "je", "я": "ya",
-             "ч": "ch", "с": "s", "м": "m", "и": "i", "т": "t", "ь": "'",
-             "б": "b", "ю": "ju", "ё": "jo",
-             "Й": "J", "Ц": "C", "У": "U", "К": "K", "Е": "E", "Н": "N",
-             "Г": "G", "Ш": "Sh", "Щ": "Shh", "З": "Z", "Х": "H",
-             "Ф": "F", "Ы": "Y", "В": "V", "А": "A", "П": "P", "Р": "R",
-             "О": "O", "Л": "L", "Д": "D", "Ж": "Zh", "Э": "Je", "Я": "Ya",
-             "Ч": "Ch", "С": "S", "М": "M", "И": "I", "Т": "T",
-             "Б": "B", "Ю": "Ju", "Ё": "Jo"}
+     "г": "g", "ш": "sh", "щ": "shh", "з": "z", "х": "h", "ъ": "#",
+     "ф": "f", "ы": "y", "в": "v", "а": "a", "п": "p", "р": "r",
+     "о": "o", "л": "l", "д": "d", "ж": "zh", "э": "je", "я": "ya",
+     "ч": "ch", "с": "s", "м": "m", "и": "i", "т": "t", "ь": "'",
+     "б": "b", "ю": "ju", "ё": "jo",
+     "Й": "J", "Ц": "C", "У": "U", "К": "K", "Е": "E", "Н": "N",
+     "Г": "G", "Ш": "Sh", "Щ": "Shh", "З": "Z", "Х": "H",
+     "Ф": "F", "Ы": "Y", "В": "V", "А": "A", "П": "P", "Р": "R",
+     "О": "O", "Л": "L", "Д": "D", "Ж": "Zh", "Э": "Je", "Я": "Ya",
+     "Ч": "Ch", "С": "S", "М": "M", "И": "I", "Т": "T",
+     "Б": "B", "Ю": "Ju", "Ё": "Jo"}
 text = text1
 translit = []
 
@@ -53,7 +53,7 @@ for symbol in text:
         translit.append(d[symbol])
     else:
         translit.append(symbol)
-        
+
 translit = ''.join(translit)
 
 if text == text.upper():
