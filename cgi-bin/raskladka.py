@@ -18,12 +18,12 @@ print("""<!DOCTYPE HTML>
             <title>Раскладка</title>
             <style>
             h1 {
-                font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+                font-family: 'Times New Roman', Times, serif;
                 font-size: 48pt;
                 color: DarkRed;
-               } 
+               }
             p {
-                font-family: Verdana, Arial, Helvetica, sans-serif; 
+                font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: 16pt;
                }
            </style>
