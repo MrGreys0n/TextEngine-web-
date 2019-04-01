@@ -23,10 +23,10 @@ text = html.escape(text)
 LANGUAGE1 = form.getfirst("LANGUAGE1")
 LANGUAGE2 = form.getfirst("LANGUAGE2")
 err = 0
-if LANGUAGE1 == None:
+if LANGUAGE1 is None:
     LANGUAGE1 = 'Русский'
     err = 1
-if LANGUAGE2 == None:
+if LANGUAGE2 is None:
     LANGUAGE2 = 'Русский'
     err = 1
 if LANGUAGE1 == 'Язык исходного текста':
@@ -44,12 +44,12 @@ print("""<!DOCTYPE HTML>
             <title>Перевод</title>
             <style>
             h1 {
-                font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
+                font-family: 'Times New Roman', Times, serif;
                 font-size: 48pt;
                 color: DarkRed;
-                } 
+                }
             p {
-                font-family: Verdana, Arial, Helvetica, sans-serif; 
+                font-family: Verdana, Arial, Helvetica, sans-serif;
                 font-size: 16pt;
                }
            </style>
