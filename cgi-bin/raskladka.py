@@ -18,12 +18,12 @@ print("""<!DOCTYPE HTML>
             <title>Раскладка</title>
             <style>
             h1 {
-                font-family: 'Times New Roman', Times, serif;
+                font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */ 
                 font-size: 48pt;
                 color: DarkRed;
-               }
+               } 
             p {
-                font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-family: Verdana, Arial, Helvetica, sans-serif; 
                 font-size: 16pt;
                }
            </style>
@@ -44,7 +44,8 @@ d = {"q": "й", "w": "ц", "e": "у", "r": "к", "t": "е", "y": "н",
      "A": "Ф", "S": "Ы", "D": "В", "F": "А", "G": "П", "H": "Р",
      "J": "О", "K": "Л", "L": "Д", ":": "Ж", '"': 'Э', "Z": "Я",
      "X": "Ч", "C": "С", "V": "М", "B": "И", "N": "Т",
-     "<": "Б", ">": "Ю", "~": "Ё", 'M': 'Ь', '/': '.', '?': ','}
+     "<": "Б", ">": "Ю", "~": "Ё", 'M': 'Ь', '/': '.', '?': ',',
+     "^": ':', "&": "?", "#": "№", "@": '"', "|": "/"}
 
 data = []
 for symbol in text:
